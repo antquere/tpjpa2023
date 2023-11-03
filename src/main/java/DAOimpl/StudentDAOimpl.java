@@ -14,17 +14,20 @@ public class StudentDAOimpl implements StudentDao {
     }
 
     @Override
-    public Student getById(Long studentId) { return null; }
-
-    @Override
-    public void insert(List<Student> t1, Student t2) {
-
+    public Student getById(List<Student> ls, Long studentId) {
+        for (Student stu : ls) {
+            if (stu.getId().equals(studentId)) {
+                return stu;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(List<Student> t1, Student t2) {
+    public void insert(List<Student> ls, Student s) { ls.add(s); }
 
-    }
+    @Override
+    public void delete(List<Student> ls, Student s) { ls.remove(s); }
 
     public Student createStudent(Student stu) {
         return stu;

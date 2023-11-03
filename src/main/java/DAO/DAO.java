@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface DAO<T> {
 
-	T getById(Long t);
+	T getById(List<T> t1, Long t2);
 
 	void insert(List<T> t1, T t2);
 

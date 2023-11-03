@@ -2,6 +2,8 @@ package DAOimpl;
 
 import DAO.SlotDao;
 import Model.Slot;
+import Model.Student;
+
 import java.util.List;
 
 public class SlotDAOimpl implements SlotDao {
@@ -11,7 +13,12 @@ public class SlotDAOimpl implements SlotDao {
     }
 
     @Override
-    public Slot getById(Long t) {
+    public Slot getById(List<Slot> ls, Long slotId) {
+        for (Slot slot : ls) {
+            if (slot.getId().equals(slotId)) {
+                return slot;
+            }
+        }
         return null;
     }
 

@@ -2,6 +2,8 @@ package DAOimpl;
 
 import DAO.RdvDao;
 import Model.Rdv;
+import Model.Student;
+
 import java.util.List;
 
 public class RdvDAOimpl implements RdvDao {
@@ -11,7 +13,14 @@ public class RdvDAOimpl implements RdvDao {
     }
 
     @Override
-    public Rdv getById(Long id) { return null; }
+    public Rdv getById(List<Rdv> lr, Long rdvId) {
+        for (Rdv rdv : lr) {
+            if (rdv.getId().equals(rdvId)) {
+                return rdv;
+            }
+        }
+        return null;
+    }
 
     @Override
     public void insert(List<Rdv> RdvList, Rdv rdv) { RdvList.add(rdv); }

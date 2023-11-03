@@ -3,6 +3,8 @@ package DAOimpl;
 import DAO.ProfessionalDao;
 import Model.Professional;
 import Model.Slot;
+import Model.User;
+
 import java.util.List;
 
 public class ProfessionalDAOimpl implements ProfessionalDao {
@@ -12,17 +14,20 @@ public class ProfessionalDAOimpl implements ProfessionalDao {
     }
 
     @Override
-    public Professional getById(Long professionalId) { return null; }
-
-    @Override
-    public void insert(List<Professional> t1, Professional t2) {
-
+    public Professional getById(List<Professional> lp, Long professionalId) {
+        for (Professional pro : lp) {
+            if (pro.getId().equals(professionalId)) {
+                return pro;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(List<Professional> t1, Professional t2) {
+    public void insert(List<Professional> lp, Professional p) { lp.add(p); }
 
-    }
+    @Override
+    public void delete(List<Professional> lp, Professional p) { lp.remove(p); }
 
     @Override
     public List<Slot> getAllSlots(Professional pro) { return pro.getSlotList(); }

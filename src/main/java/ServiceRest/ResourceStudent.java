@@ -6,6 +6,8 @@ import DAO.StudentDao;
 import DAOimpl.StudentDAOimpl;
 import Model.Student;
 
+import java.util.List;
+
 @Path("/student")
 public class ResourceStudent {
     private StudentDao studentDao = new StudentDAOimpl();
@@ -13,8 +15,8 @@ public class ResourceStudent {
     @GET
     @Path("/{studentId}")
     @Produces("application/json")
-    public Response getStudent(@PathParam("studentId") Long studentId) {
-        Student student = studentDao.getById(studentId);
+    public Response getStudent(@PathParam("studentId") Long studentId, List<Student> ls) {
+        Student student = studentDao.getById(ls, studentId);
         if (student != null) {
             return Response.status(Response.Status.OK).entity(student).build();
         } else {
