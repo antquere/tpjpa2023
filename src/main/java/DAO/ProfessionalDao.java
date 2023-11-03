@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface ProfessionalDao extends DAO<Professional> {
 
-    List<Slot> getAllSlots();
+    List<Slot> getAllSlots(Professional pro);
 
     Professional createProfessional(Professional pro);
 
-    void setNewSlots(List<Slot> newSlots);
+    void setNewSlots(Professional pro, List<Slot> newSlots);
 
     void setTimeStart(Slot slot,Long timeStart);
 

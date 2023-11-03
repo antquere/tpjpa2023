@@ -2,12 +2,9 @@ package DAOimpl;
 
 import DAO.RdvDao;
 import Model.Rdv;
-import java.util.ArrayList;
 import java.util.List;
 
 public class RdvDAOimpl implements RdvDao {
-
-    List<Rdv> RdvList = new ArrayList<Rdv>();
 
     public RdvDAOimpl() {
 
@@ -17,10 +14,10 @@ public class RdvDAOimpl implements RdvDao {
     public Rdv getById(Long id) { return null; }
 
     @Override
-    public void insert(Rdv rdv) { RdvList.add(rdv); }
+    public void insert(List<Rdv> RdvList, Rdv rdv) { RdvList.add(rdv); }
 
     @Override
-    public void delete(Rdv rdv) {
+    public void delete(List<Rdv> RdvList, Rdv rdv) {
         RdvList.remove(rdv);
     }
 }

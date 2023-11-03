@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface StudentDao extends DAO<Student> {
 
-    List<Rdv> getAllRdv();
+    List<Rdv> getAllRdv(Student stu);
 
     Student createStudent(Student stu);
 

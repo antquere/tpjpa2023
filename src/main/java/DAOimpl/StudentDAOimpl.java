@@ -9,8 +9,6 @@ import java.util.List;
 
 public class StudentDAOimpl implements StudentDao {
 
-    Student stu;
-
     public StudentDAOimpl() {
 
     }
@@ -18,22 +16,22 @@ public class StudentDAOimpl implements StudentDao {
     @Override
     public Student getById(Long studentId) { return null; }
 
+    @Override
+    public void insert(List<Student> t1, Student t2) {
+
+    }
+
+    @Override
+    public void delete(List<Student> t1, Student t2) {
+
+    }
+
     public Student createStudent(Student stu) {
         return stu;
     }
 
     @Override
-    public void insert(Student student) {
-
-    }
-
-    @Override
-    public void delete(Student student) {
-
-    }
-
-    @Override
-    public List<Rdv> getAllRdv() { return stu.getRdvList(); }
+    public List<Rdv> getAllRdv(Student stu) { return stu.getRdvList(); }
 
     @Override
     public List<Slot> consultSlots(Professional pro) { return pro.getSlotList(); }
